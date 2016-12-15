@@ -1,0 +1,61 @@
+#
+# Configuration file for the Xen instance prueba, created
+# by xen-tools 4.3.1 on Tue Nov  8 16:35:47 2016.
+#
+
+#
+#  Kernel + memory size
+#
+kernel      = "/usr/lib/xen-4.1/boot/hvmloader"
+builder = 'hvm'
+boot = 'dca'
+
+device_model="/usr/lib/xen-4.1/bin/qemu-dm"
+acpi=1
+apic=1
+
+sdl=0
+vnc=1
+stdvga=0
+serial='pty'
+
+vcpus='2'
+maxcpu=2
+memory='128'
+
+
+
+#
+#  Disk device(s).
+#
+root = 
+disk        = [
+                  'phy:/dev/vol1/hvm,hvda2,w',
+		  'file:/xen/netinst.iso,hdb:cdrom,w'
+              ]
+
+
+#
+#  Physical volumes
+#
+
+
+#
+#  Hostname
+#
+name        = 'my_hvm'
+
+#
+#  Networking
+#
+vif         = [ 'bridge=eth0' ]
+
+#
+#  Behaviour
+#
+on_poweroff = 'destroy'
+on_reboot   = 'restart'
+on_crash    = 'restart'
+
+
+
