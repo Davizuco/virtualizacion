@@ -12,6 +12,10 @@ cp /home/SPECweb2005/wafgen/unix/support_downloads_props.rc /git/SPECweb/wafgen/
 cp /home/SPECweb2005/Test.* /git/SPECweb/
 #cp ./gitrun.sh /git/
 
+# LXD
+cp /etc/lxc/*.conf /git/etc/lxd/
+cp /var/lib/lxc/my_jessie/conf* /git/var/lib/lxc/my_jessie/
+
 cd /git
 git init
 git add *
