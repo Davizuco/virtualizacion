@@ -13,7 +13,7 @@ cp /home/SPECweb2005/Test.* /git/SPECweb/
 #cp ./gitrun.sh /git/
 
 # LXD
-cp /etc/lxc/*.conf /git/etc/lxd/
+cp /etc/lxc/*.conf /git/etc/lxc/
 cp /var/lib/lxc/my_jessie/conf* /git/var/lib/lxc/my_jessie/
 
 cd /git
