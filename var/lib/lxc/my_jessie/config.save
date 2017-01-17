@@ -1,12 +1,12 @@
 # Template used to create this container: /usr/share/lxc/templates/lxc-debian
 # Parameters passed to the template:
 # For additional config options, please look at lxc.container.conf(5)
+lxc.network.type = empty
 lxc.network.type = veth
 lxc.network.name = eth0
-lxc.network.link = virbr0
+lxc.network.link = br0
 lxc.network.ipv4 = 10.0.3.138/24
 lxc.network.flags = up
-
 lxc.rootfs = /var/lib/lxc/my_jessie/rootfs
 
 # Common configuration
