@@ -1,0 +1,141 @@
+###########################################################################
+#
+# This Wafgen Properties file creates a Non-Scaling File Set for the
+# Banking Workload
+#
+# > ls www/support/dynamic_padding
+#   catalog      file         fileCatalog  index        product      search
+#
+# > ls www/support/images
+#   H_D                   content_action        masthead_local_sep
+#   H_Service_Tag_Unkown  content_arrow         masthead_subnavsep
+#   ___                   email                 masthead_transparent
+#   aaa                   flattab_nl            nav_q
+#   bar                   flattab_nr            note
+#   blue_arrow_right      flattab_sl            print
+#   blue_arrow_top        flattab_sr            spacer
+#   button-1              global                template_javascripts
+#   button-2              h_product_selection   us
+#   button-3              help
+#   ccc                   masthead_global
+#   
+#
+# This file_set does not include any classes.  Individually named files
+# are created.  Numbered directories are not used, so there is no
+# scaling of the file set based on SIMULTANEOUS_SESSIONS
+#
+#
+###########################################################################
+#
+# For Conforming results, changes MAY BE made to values in Section A below
+#
+###########################################################################
+#       Section A
+###########################################################################
+
+# Wafgen DEBUG FLAG, Values:0-4 Default=0, Minimum=1, Maximum=4
+#
+#DEBUG=0
+
+# Path for webservers root document directory
+#
+# Warning: if DOCROOT is not set for to your webserver's document root
+# Wafgen will by default create the fileset in the current directory!
+#
+# Example for Unix: DOCROOT=/www
+DOCROOT=/var/www
+
+
+# Directory path just below docroot, where files and classes will be created
+#
+#
+BASEDIRNAME=support
+
+###########################################################################
+#
+#       For Conforming results, DO NOT change values in Section B below
+#
+###########################################################################
+#       Section B
+###########################################################################
+
+# Following parameters are used to determine how many base directories to
+# create using the following formula:
+#       TotalBaseDirs = BASENUMDIRS + ( SIMULTANEOUS_SESSIONS * DIRSCALING)
+#
+# example: SPECweb99_TotalBaseDirs = 25 + ( SIMULTANEOUS_SESSIONS * 3.279)
+# example: Single-BaseDir = 1 + ( SIMULTANEOUS_SESSIONS * 0)
+# example: Single-BaseDir = 0 + ( 100 * .01)
+#
+
+# Number of Simultaneous Sessions (connections)
+#
+SIMULTANEOUS_SESSIONS=200
+
+# Workload Specific values to calculate TotalBaseDirs (see above)
+#
+BASENUMDIRS=0
+DIRSCALING=0
+
+# if creating multiple base directories, start with 1st Directory - allows
+# existing set of directories to be extended
+#
+FIRSTDIRECTORY=0
+
+# Size of internal random character buffer to use
+#
+BIGBUFFERSZ=1048576
+
+# How frequently are single character markers placed in file starting at
+# 1st char of line following 1st line of file and every MARKER_FREQ
+# characters
+#
+MARKER_FREQ=4096
+
+# length of lines at which \n is emitted
+#
+LINESIZE=64
+
+#
+# Defining individual files:
+#       FILE[index]=NameOfFile:LengthOfFile:subdirectory
+#
+FILE[00]=index:51700:dynamic_padding
+FILE[01]=search:18000:dynamic_padding
+FILE[02]=catalog:27500:dynamic_padding
+FILE[03]=product:52700:dynamic_padding
+FILE[04]=fileCatalog:94500:dynamic_padding
+FILE[05]=file:113300:dynamic_padding
+
+FILE[06]=aaa:30:images
+FILE[07]=ccc:30:images
+FILE[08]=___:810:images
+FILE[09]=bar:60:images
+FILE[10]=blue_arrow_right:50:images
+FILE[11]=blue_arrow_top:50:images
+FILE[12]=content_action:270:images
+FILE[13]=content_arrow:130:images
+FILE[14]=email:110:images
+FILE[15]=flattab_nl:80:images
+FILE[16]=flattab_nr:90:images
+FILE[17]=flattab_sl:90:images
+FILE[18]=flattab_sr:90:images
+FILE[19]=global:4180:images
+FILE[20]=help:700:images
+FILE[21]=H_D:1830:images
+FILE[22]=masthead_transparent:1510:images
+FILE[23]=masthead_global:110:images
+FILE[24]=masthead_local_sep:70:images
+FILE[25]=masthead_subnavsep:60:images
+FILE[26]=nav_q:250:images
+FILE[27]=print:360:images
+FILE[28]=spacer:40:images
+FILE[29]=template_javascripts:5670:images
+FILE[30]=us:80:images
+FILE[31]=note:980:images
+FILE[32]=h_product_selection:1920:images
+FILE[33]=button-1:240:images
+FILE[34]=button-2:260:images
+FILE[35]=button-3:260:images
+FILE[36]=H_Service_Tag_Unkown:2170:images
+
