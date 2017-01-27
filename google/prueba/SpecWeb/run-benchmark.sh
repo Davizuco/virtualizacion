@@ -1,3 +1,3 @@
 #! /bin/bash
 
-java -Xms512m -Xmx512m -jar specwebclient.jar -n localhost
+java -Xms512m -Xmx512m -jar specweb.jar
