@@ -8,7 +8,7 @@ cp  /home/SPECweb2005/Test.config /git/google/prueba/SpecWeb
 cp /home/SPECweb2005/SPECweb_Support.config /git/google/prueba/SpecWeb
 cp /home/SPECweb2005/run-*  /git/google/prueba/SpecWeb/
 
-cp /home/SPECweb2005/results  /git/google/prueba/SpecWeb/results_dist
+cp /home/SPECweb2005/results/*  /git/google/prueba/SpecWeb/results_dist
 
 cp /home/SPECweb2005/wafgen/unix/support_image_props.rc /git/ /git/google/prueba/SpecWeb/wafgen/unix/
 cp /home/SPECweb2005/wafgen/unix/support_downloads_props.rc /git/google/prueba/SpecWeb/wafgen/unix/
