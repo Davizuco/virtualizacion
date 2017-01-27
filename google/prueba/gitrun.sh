@@ -6,6 +6,7 @@ echo "Copiando ficheros al repositorio"
 #SpecWeb
 cp  /home/SPECweb2005/Test.config /git/google/prueba/SpecWeb
 cp /home/SPECweb2005/SPECweb_Support.config /git/google/prueba/SpecWeb
+cp /home/SPECweb2005/run-*  /git/google/prueba/SpecWeb/
 
 cp /home/SPECweb2005/results  /git/google/prueba/SpecWeb/results
 
