@@ -1,0 +1,144 @@
+###########################################################################
+#
+# This Wafgen Properties file creates a Scaling File Set for the 
+# Download Files for the Support Workload.
+#
+# NOTE: this workload creates BIG files, so pass a large stack size to 
+# the JVM:
+#     java -Xmx384m wafgen/application/Wafgen support_downloads_props.rc
+#
+###########################################################################
+#
+# For Conforming results, changes MAY BE made to values in Section A below
+#
+###########################################################################
+#       Section A
+###########################################################################
+
+# Wafgen DEBUG FLAG, Values:0-4 Default=0, Minimum=1, Maximum=4
+#
+#DEBUG=0
+
+# Path for webservers root document directory
+#
+# Warning: if DOCROOT is not set for to your webserver's document root
+# Wafgen will by default create the fileset in the current directory!
+#
+# Example for Unix: DOCROOT=/www
+DOCROOT=/var/www
+
+
+# Use these to create subdirectories
+# If TotalBaseDirs calculation is > 32000, set DOWNLOAD_SUBDIRS
+# (alias for SUBDIRSCALING) to value > 1
+# to avoid exceeding limits on number of files per directory.
+#
+DOWNLOAD_SUBDIRS=0
+
+# Directory path just below docroot, where files and classes will be created
+# Should append 0's if number of base directories is > 1
+#
+# Setting for BASESUBDIRNAME should match concatenation of
+# DOWNLOAD_PATH + BASE_SUBDIR_NAME from SPECweb_Support.config
+#
+# FIRST_SUBDIR_NUM is the starting index for numbering subdirectories
+# (alias for FIRSTSUBDIRECTORY).
+#
+#subdirs#BASESUBDIRNAME=support/downloads/subdir0000
+#subdirs#FIRST_SUBDIR_NUM=1
+
+# directory name under BASESUBDIRNAME or under DOCROOT if SUBDIRSCALING
+# alias set to 0
+#
+#subdirs#BASEDIRNAME=dir0000000000
+BASEDIRNAME=support/downloads/dir0000000000
+
+# if creating multiple base directories, start with 1st Directory - allows
+# existing set of directories to be extended
+#
+FIRSTDIRECTORY=1
+
+# Following parameters are used to determine how many base directories to
+# create using the following formula:
+#       TotalBaseDirs = BASENUMDIRS + ( SIMULTANEOUS_SESSIONS * DIRSCALING)
+#
+# example: SPECweb99_TotalBaseDirs = 25 + ( SIMULTANEOUS_SESSIONS * 3.279)
+# example: Single-BaseDir = 1 + ( SIMULTANEOUS_SESSIONS * 0)
+# example: Single-BaseDir = 0 + ( 100 * .01)
+#
+
+# Number of Simultaneous Sessions (connections)
+#
+SIMULTANEOUS_SESSIONS=200
+
+###########################################################################
+#
+#       For Conforming results, DO NOT change values in Section B below
+#
+###########################################################################
+#       Section B
+###########################################################################
+
+# Workload Specific values to calculate TotalBaseDirs (see above)
+#
+BASENUMDIRS=0
+DIRSCALING=0.25
+
+# Size of internal random character buffer to use
+#
+BIGBUFFERSZ=40000000
+
+# How frequently are single character markers placed in file starting at
+# 1st char of line following 1st line of file and every MARKER_FREQ
+# characters
+#
+MARKER_FREQ=4096
+
+# length of lines at which \n is emitted
+#
+LINESIZE=64
+
+#
+# Defining CLASSES
+#
+# Base filename for class
+#
+CLASS[0]      ="download0_0"
+
+# starting length of class file
+#
+CLASS_LEN[0]  ="104858"
+
+# increment length by CLASS_INCR amount for subsequent files in class
+#
+CLASS_INCR[0] ="104858"
+
+# Minimum number of files in class
+#
+CLASS_COUNT[0] ="5"
+
+CLASS[1]      ="download1_0"
+CLASS_LEN[1]  ="629146"
+CLASS_INCR[1] ="125829"
+CLASS_COUNT[1] ="3"
+
+CLASS[2]      ="download2_0"
+CLASS_LEN[2]  ="1048576"
+CLASS_INCR[2] ="492831"
+CLASS_COUNT[2] ="4"
+
+CLASS[3]      ="download3_0"
+CLASS_LEN[3]  ="4194304"
+CLASS_INCR[3] ="1352663"
+CLASS_COUNT[3] ="2"
+
+CLASS[4]      ="download4_0"
+CLASS_LEN[4]  ="9992929"
+CLASS_INCR[4] ="0"
+CLASS_COUNT[4] ="1"
+
+CLASS[5]      ="download5_0"
+CLASS_LEN[5]  ="37748736"
+CLASS_INCR[5] ="0"
+CLASS_COUNT[5] ="1"
+
